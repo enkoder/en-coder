@@ -1,6 +1,6 @@
 #! /usr/bin/env fish
 
-source .config/fish/conf.d/helpers.fish
+source home/.config/fish/conf.d/helpers.fish
 
 set FISHER_PLUGINS = ilancosman/tide jethrokuan/z
 
