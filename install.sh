@@ -21,9 +21,9 @@ if ! type -q fisher
 end
 
 print_step "Installing fisher plugins"
-for p in $plugins
+for p in $FISHER_PLUGINS
     echo "Installing $p"
-    fisher install 
+    fisher install  $p
 end
 
 
