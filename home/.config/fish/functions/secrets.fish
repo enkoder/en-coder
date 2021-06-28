@@ -1,8 +1,6 @@
-set SECRETS GITHUB_API_ACCESS_TOKEN
-
 function secrets
     op_signin
-    for s in $SECRETS
-	set -g --export $s (op get item $s | jq -r .details.password)
+    for secret in (op list items --categories 'password' | jq -r .[].overview.title)
+	set -g --export $secret (op get item $secret | jq -r .details.password)
     end
 end
