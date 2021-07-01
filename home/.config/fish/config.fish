@@ -7,3 +7,5 @@ set --universal tide_right_prompt_items status cmd_duration context jobs virtual
 fish_add_path $HOME/.local/bin
 fish_add_path $HOME/.cargo/bin
 
+alias vim='nvim'
+

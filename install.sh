@@ -7,6 +7,18 @@ set FISHER_PLUGINS = ilancosman/tide jethrokuan/z danhper/fish-ssh-agent
 sudo apt update 
 sudo apt install --yes gcc tree fish xutils-dev python3.7 unzip
 
+if ! type -q nvim
+    sudo add-apt-repository ppa:neovim-ppa/stable
+    sudo apt-get update
+    sudo apt-get install neovim
+end
+
+# vimplug
+if ! test -e ~/.vim/autoload/plug.vim
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+	    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+end
+
 print_step "Setting default shell to fish"
 sudo chsh -s /usr/bin/fish (whoami)
 
