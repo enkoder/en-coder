@@ -2,10 +2,10 @@
 
 source home/.config/fish/conf.d/helpers.fish
 
-set FISHER_PLUGINS = ilancosman/tide jethrokuan/z
+set FISHER_PLUGINS = ilancosman/tide jethrokuan/z danhper/fish-ssh-agent
 
 sudo apt update 
-sudo apt install tree fish xutils-dev python3.7
+sudo apt install --yes gcc tree fish xutils-dev python3.7 unzip
 
 print_step "Setting default shell to fish"
 sudo chsh -s /usr/bin/fish (whoami)
@@ -17,7 +17,8 @@ popd
 
 if ! type -q fisher
     print_step "Installing fisher"
-    curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+    curl -sL https://git.io/fisher | source
+    fisher install jorgebucaran/fisher
 end
 
 print_step "Installing fisher plugins"
@@ -27,7 +28,7 @@ for p in $FISHER_PLUGINS
 end
 
 
-pip3.7 install --user virtualfish
+python3.7 -m pip install --user virtualfish
 vf install
 
 if ! type -q op
