@@ -2,7 +2,7 @@
 
 source home/.config/fish/conf.d/helpers.fish
 
-set FISHER_PLUGINS = ilancosman/tide jethrokuan/z danhper/fish-ssh-agent
+set FISHER_PLUGINS = ilancosman/tide jethrokuan/z
 
 sudo apt update 
 sudo apt install --yes gcc tree fish xutils-dev python3.7 unzip
@@ -40,7 +40,7 @@ for p in $FISHER_PLUGINS
 end
 
 
-python3.7 -m pip install --user virtualfish
+python3.7 -m pip install virtualfish
 vf install
 
 if ! type -q op
