@@ -4,8 +4,9 @@ source home/.config/fish/conf.d/helpers.fish
 
 set FISHER_PLUGINS = ilancosman/tide jethrokuan/z
 
+sudo add-apt-repository ppa:jonathonf/vim
 sudo apt update 
-sudo apt install --yes gcc tree fish xutils-dev python3.7 unzip
+sudo apt install --yes gcc tree fish xutils-dev python3.7 unzip vim
 
 if ! type -q nvim
     sudo add-apt-repository ppa:neovim-ppa/stable
