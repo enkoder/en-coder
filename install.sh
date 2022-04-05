@@ -4,15 +4,8 @@ source home/.config/fish/conf.d/helpers.fish
 
 set FISHER_PLUGINS = ilancosman/tide jethrokuan/z
 
-sudo add-apt-repository ppa:jonathonf/vim
-sudo apt update 
-sudo apt install --yes gcc tree fish xutils-dev python3.7 unzip vim
-
-if ! type -q nvim
-    sudo add-apt-repository ppa:neovim-ppa/stable
-    sudo apt-get update
-    sudo apt-get install neovim
-end
+sudo apt update
+sudo apt install --yes gcc tree zsh fish xutils-dev python3.7 unzip
 
 # vimplug
 if ! test -e ~/.vim/autoload/plug.vim
